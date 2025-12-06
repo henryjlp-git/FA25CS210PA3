@@ -126,6 +126,18 @@ void printPath(pair<int,int> exitcell,
 
     int N = maze.size();
     int M = maze[0].size();
+
+    if (r < 0 || r>= N || c < 0 || c >= M) return false; // Out-of-bounds checks
+
+    if (maze[r][c] == 1) return false; // Wall checks
+
+    if (visited[r][c]) return false; // Visited checks
+
+    visited[r][c] = true; // Marking the current cell as visited
+
+    if (r == exit_r && c == exit_c) return true; // Checking if (r, c) is the exit
+
+
  }
 
 
